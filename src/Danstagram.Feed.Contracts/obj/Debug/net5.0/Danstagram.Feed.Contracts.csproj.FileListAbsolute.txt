@@ -1,0 +1,12 @@
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\bin\Debug\net5.0\Danstagram.Feed.Contracts.deps.json
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\bin\Debug\net5.0\Danstagram.Feed.Contracts.dll
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\bin\Debug\net5.0\Danstagram.Feed.Contracts.pdb
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\Danstagram.Feed.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\Danstagram.Feed.Contracts.AssemblyInfoInputs.cache
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\Danstagram.Feed.Contracts.AssemblyInfo.cs
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\Danstagram.Feed.Contracts.csproj.CoreCompileInputs.cache
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\Danstagram.Feed.Contracts.dll
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\Danstagram.Feed.Contracts.pdb
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\ref\Danstagram.Feed.Contracts.dll
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\Danstagram.Feed.Contracts.csproj.AssemblyReference.cache
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\bin\Debug\net5.0\ref\Danstagram.Feed.Contracts.dll
