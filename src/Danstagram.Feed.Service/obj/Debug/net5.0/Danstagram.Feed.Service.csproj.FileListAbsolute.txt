@@ -65,5 +65,10 @@ D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagra
 D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\bin\Debug\net5.0\Danstagram.Feed.Contracts.dll
 D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\bin\Debug\net5.0\Danstagram.Feed.Contracts.pdb
 D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\bin\Debug\net5.0\Danstagram.Inventory.Contracts.dll
-D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\obj\Debug\net5.0\staticwebassets\Danstagram.Feed.Service.StaticWebAssets.xml
-D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\bin\Debug\net5.0\ref\Danstagram.Feed.Service.dll
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\bin\Debug\net5.0\Danstagram.Feed.Service.StaticWebAssets.xml
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\obj\Debug\net5.0\staticwebassets\Danstagram.Feed.Service.StaticWebAssets.Pack.cache
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\obj\Debug\net5.0\staticwebassets\msbuild.Danstagram.Feed.Service.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\obj\Debug\net5.0\staticwebassets\msbuild.build.Danstagram.Feed.Service.props
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Danstagram.Feed.Service.props
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Danstagram.Feed.Service.props
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Service\obj\Debug\net5.0\refint\Danstagram.Feed.Service.dll
