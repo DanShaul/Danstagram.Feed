@@ -9,4 +9,4 @@ D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagra
 D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\Danstagram.Feed.Contracts.pdb
 D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\ref\Danstagram.Feed.Contracts.dll
 D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\Danstagram.Feed.Contracts.csproj.AssemblyReference.cache
-D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\obj\Debug\net5.0\refint\Danstagram.Feed.Contracts.dll
+D:\Necessary\Open Uni Matalot\Sadna Be Tihnut monhe atzamim\Danstagram\Danstagram.Feed\src\Danstagram.Feed.Contracts\bin\Debug\net5.0\ref\Danstagram.Feed.Contracts.dll
