@@ -4,16 +4,16 @@ using System.ComponentModel.DataAnnotations;
 namespace Danstagram.Feed.Service.Dtos
 {
     #region Properties
-    public record ItemDto(Guid Id,
+    public record FeedItemDto(Guid Id,
                         String UserName,
                         byte[] Image,
                         int LikeCount,
                         string Caption,
                         DateTimeOffset CreatedDate);
-    public record CreateItemDto(Guid UserId,
+    public record CreateFeedItemDto(Guid UserId,
                                 byte[] Image,
                                 string Caption);
-    public record DeleteItetmDto(Guid ImageId);
+    public record DeleteFeedItetmDto(Guid ImageId);
     #endregion
 
 } 

@@ -3,10 +3,10 @@ using Danstagram.Common;
 
 namespace Danstagram.Feed.Service.Entities
 {
-    public class Item : IEntity {
+    public class FeedItem : IEntity {
         #region Properties
         public Guid Id { get; set; }
-        public Guid UserName {get;set;}
+        public Guid UserId {get;set;}
         public byte[] Image { get; set; }
         
         public string Caption { get; set; }
