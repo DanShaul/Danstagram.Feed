@@ -19,7 +19,7 @@ dotnet new classlib -n Danstagram.Feed.Contracts
 Add nuget Package:
 
 ```powershell
-git add package ..\..\..\packages\Danstagram.Inventory.Contracts.1.0.0.nupkg
+dotnet add package ..\..\..\packages\Danstagram.Inventory.Contracts.1.0.0.nupkg
 ```
 
 Add reference to classlib:
