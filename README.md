@@ -28,6 +28,7 @@ Add reference to classlib:
 dotnet add reference ..\Danstagram.Inventory.Contracts\Danstagram.Inventory.Contracts.csproj
 ```
 
+```powershell
 dotnet add package Microsoft.Extensions.Configuration
 dotnet add package MongoDB.Driver
 dotnet add package Microsoft.Extensions.Configuration.Binder
@@ -36,3 +37,5 @@ dotnet add package Microsoft.Extensions.Http.Polly
 dotnet add package MassTransit.AspNetCore
 dotnet add package MassTransit.RabbitMQ
 dotnet nuget add source 'D:\...' -n Danstagram
+
+```
