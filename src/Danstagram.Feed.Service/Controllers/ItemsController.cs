@@ -36,9 +36,32 @@ namespace Danstagram.Feed.Service.Controllers
                                 IRepository<LikeItem> likeItemsRepository,
                                 IPublishEndpoint publishEndpoint)
         {
+            IdentityItem identityItem = new() {
+                Id = Guid.NewGuid(),
+                UserName = "tempUser1"
+            };
+            FeedItem feedItem = new() {
+                Id = Guid.NewGuid(),
+                UserId = identityItem.Id,
+                Image = new byte[]{0,0,0},
+                Caption = "hey yo",
+                CreatedDate = DateTimeOffset.UtcNow
+            };
+            LikeItem likeItem = new(){
+                Id = Guid.NewGuid(),
+                FeedItemId = feedItem.Id,
+                UserId = identityItem.Id
+            };
+
             this.feedItemsRepository = feedItemsRepository;
             this.identityItemsRepository = identityItemsRepository;
             this.likeItemsRepository = likeItemsRepository;
+
+            this.feedItemsRepository.CreateAsync(feedItem);
+            this.identityItemsRepository.CreateAsync(identityItem);
+            this.likeItemsRepository.CreateAsync(likeItem);
+
+
             this.publishEndpoint = publishEndpoint;
         }
 
@@ -94,6 +117,9 @@ namespace Danstagram.Feed.Service.Controllers
         [HttpPost]
         public async Task<ActionResult<CreateFeedItemDto>> PostAsync(CreateFeedItemDto createItemDto)
         {
+            if (identityItemsRepository.GetAsync(createItemDto.UserId) == null){
+                return (ActionResult<CreateFeedItemDto>)NotFound();
+            }
             FeedItem item = new()
             {
                 Id = Guid.NewGuid(),

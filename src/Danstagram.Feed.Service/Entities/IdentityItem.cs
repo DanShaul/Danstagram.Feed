@@ -7,7 +7,6 @@ namespace Danstagram.Feed.Service.Entities{
         #region Properties
 
         public Guid Id{get;set;}
-        public Guid UserId{get;set;}
         public string UserName{get;set;}
 
         #endregion
