@@ -11,6 +11,8 @@ using Danstagram.Feed.Contracts;
 using Microsoft.VisualBasic;
 using System.Collections.ObjectModel;
 using MassTransit.Internals;
+using Microsoft.AspNetCore.Http.Features;
+using System.Net.NetworkInformation;
 
 namespace Danstagram.Feed.Service.Controllers
 {
@@ -21,7 +23,7 @@ namespace Danstagram.Feed.Service.Controllers
         #region Properties
 
         private readonly IRepository<FeedItem> feedItemsRepository;
-        private readonly IRepository<AccountItem> accountItemsRepository;
+        private readonly IRepository<IdentityItem> identityItemsRepository;
         private readonly IRepository<LikeItem> likeItemsRepository;
         private readonly IPublishEndpoint publishEndpoint;
 
@@ -30,13 +32,13 @@ namespace Danstagram.Feed.Service.Controllers
         #region Constructors
 
         public ItemsController(IRepository<FeedItem> feedItemsRepository, 
-                                IRepository<AccountItem> accountItemsRepository, 
-                                IRepository<InventoryItem> inventoryItemsRepository,
+                                IRepository<IdentityItem> identityItemsRepository, 
+                                IRepository<LikeItem> likeItemsRepository,
                                 IPublishEndpoint publishEndpoint)
         {
             this.feedItemsRepository = feedItemsRepository;
-            this.accountItemsRepository = accountItemsRepository;
-            this.inventoryItemsRepository = inventoryItemsRepository;
+            this.identityItemsRepository = identityItemsRepository;
+            this.likeItemsRepository = likeItemsRepository;
             this.publishEndpoint = publishEndpoint;
         }
 
@@ -45,57 +47,52 @@ namespace Danstagram.Feed.Service.Controllers
         #region Methods
 
         [HttpGet]
-        public async Task<IEnumerable<ItemDto>> GetItemAsync()
+        public async Task<IEnumerable<FeedItemDto>> GetItemsAsync()
         {
-            List<ItemDto> items = new();
+
             var feedItems = await feedItemsRepository.GetAllAsync();
-            var inventoryItems = await inventoryItemsRepository. GetAllAsync();
-            var accountItems = await accountItemsRepository.GetAllAsync();
-            var likeItems = await likeItemsRepository.GetAllAsync();
-            foreach(var item in feedItems){
-                var userId = (inventoryItems.Single(existingItem => existingItem.ItemId == item.Id)).UserId;
-                var itemDto = new ItemDto(
-                    ItemId = item.Id,
-                    UserName = accountItems.Single(item => item.Id == userId),
-                    Image = item.Image,
-                    LikeCount = 
-                );
+
+            var feedItemIds = feedItems.Select(item => item.Id);
+            var likeItems = await likeItemsRepository.GetAllAsync(item => feedItemIds.Contains(item.FeedItemId));
+
+            var feedUserIds = feedItems.Select(item => item.UserId);
+            var identityItems = await identityItemsRepository.GetAllAsync(item => feedUserIds.Contains(item.Id));
+
+            var items = feedItems.Select(item => new FeedItemDto(
+                item.Id,
+                identityItems.SingleOrDefault(identity => identity.Id == item.UserId).UserName,
+                item.Image,
+                likeItems.Select(likeItem => likeItem.FeedItemId == item.Id).Count(),
+                item.Caption,
+                item.CreatedDate));
 
             return items;
         }
 
-        
-        public async Task<IEnumerable<FeedItemDto>> GetFeedItemAsync()
-        {
-            IEnumerable<FeedItemDto> items = (await feedItemsRepository.GetAllAsync())
-                                        .Select(item => item.AsDto());
-            return items;
-        }
-
-        // Get /items/{id}
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ItemDto>> GetByIdAsync(Guid id)
-        {
-            FeedItem item = await itemsRepository.GetAsync(id);
-
-            return item == null ? (ActionResult<ItemDto>)NotFound() : (ActionResult<ItemDto>)item.AsDto();
-        }
-
-        // // Post /items
-        // [HttpPost]
-        // public async Task<ActionResult<ItemDto>> PostAsync(CreateItemDto createItemDto)
+        // // Get /items/{id}
+        // [HttpGet("{id}")]
+        // public async Task<ActionResult<FeedItemDto>> GetByIdAsync(Guid id)
         // {
-        //     FeedItem item = new()
-        //     {
-        //         Id = Guid.NewGuid(),
-        //         Image = createItemDto.Image,
-        //         Caption = createItemDto.Caption,
-        //         LikeCount = 0,
-        //         CreatedDate = DateTimeOffset.UtcNow
-        //     };
-        //     await itemsRepository.CreateAsync(item);
+        //     FeedItem item = await itemsRepository.GetAsync(id);
 
-        //     await publishEndpoint.Publish(new FeedItemCreated(item.Id, item.Image, item.Caption, item.LikeCount));
+        //     return item == null ? (ActionResult<ItemDto>)NotFound() : (ActionResult<ItemDto>)item.AsDto();
+        // }
+
+        // Post /items
+        [HttpPost]
+        public async Task<ActionResult<FeedItemDto>> PostAsync(CreateItemDto createItemDto)
+        {
+            FeedItem item = new()
+            {
+                Id = Guid.NewGuid(),
+                Image = createItemDto.Image,
+                Caption = createItemDto.Caption,
+                LikeCount = 0,
+                CreatedDate = DateTimeOffset.UtcNow
+            };
+            await itemsRepository.CreateAsync(item);
+
+            await publishEndpoint.Publish(new FeedItemCreated(item.Id, item.Image, item.Caption, item.LikeCount));
 
         //     return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
         // }
