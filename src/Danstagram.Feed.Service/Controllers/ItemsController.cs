@@ -8,26 +8,67 @@ using Danstagram.Feed.Service.Entities;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Danstagram.Feed.Contracts;
+using Microsoft.VisualBasic;
+using System.Collections.ObjectModel;
+using MassTransit.Internals;
+
 namespace Danstagram.Feed.Service.Controllers
 {
     [ApiController]
     [Route("items")]
     public class ItemsController : ControllerBase
     {
-        private readonly IRepository<FeedItem> itemsRepository;
+        #region Properties
+
+        private readonly IRepository<FeedItem> feedItemsRepository;
+        private readonly IRepository<AccountItem> accountItemsRepository;
+        private readonly IRepository<LikeItem> likeItemsRepository;
         private readonly IPublishEndpoint publishEndpoint;
 
-        public ItemsController(IRepository<FeedItem> itemsRepository, IPublishEndpoint publishEndpoint)
+        #endregion
+
+        #region Constructors
+
+        public ItemsController(IRepository<FeedItem> feedItemsRepository, 
+                                IRepository<AccountItem> accountItemsRepository, 
+                                IRepository<InventoryItem> inventoryItemsRepository,
+                                IPublishEndpoint publishEndpoint)
         {
-            this.itemsRepository = itemsRepository;
+            this.feedItemsRepository = feedItemsRepository;
+            this.accountItemsRepository = accountItemsRepository;
+            this.inventoryItemsRepository = inventoryItemsRepository;
             this.publishEndpoint = publishEndpoint;
         }
 
+        #endregion
+
+        #region Methods
+
         [HttpGet]
-        public async Task<IEnumerable<ItemDto>> GetAsync()
+        public async Task<IEnumerable<ItemDto>> GetItemAsync()
         {
-            IEnumerable<ItemDto> items = (await itemsRepository.GetAllAsync())
-                        .Select(item => item.AsDto());
+            List<ItemDto> items = new();
+            var feedItems = await feedItemsRepository.GetAllAsync();
+            var inventoryItems = await inventoryItemsRepository. GetAllAsync();
+            var accountItems = await accountItemsRepository.GetAllAsync();
+            var likeItems = await likeItemsRepository.GetAllAsync();
+            foreach(var item in feedItems){
+                var userId = (inventoryItems.Single(existingItem => existingItem.ItemId == item.Id)).UserId;
+                var itemDto = new ItemDto(
+                    ItemId = item.Id,
+                    UserName = accountItems.Single(item => item.Id == userId),
+                    Image = item.Image,
+                    LikeCount = 
+                );
+
+            return items;
+        }
+
+        
+        public async Task<IEnumerable<FeedItemDto>> GetFeedItemAsync()
+        {
+            IEnumerable<FeedItemDto> items = (await feedItemsRepository.GetAllAsync())
+                                        .Select(item => item.AsDto());
             return items;
         }
 

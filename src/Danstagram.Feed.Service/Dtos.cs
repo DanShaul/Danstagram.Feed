@@ -3,9 +3,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Danstagram.Feed.Service.Dtos
 {
-    public record ItemDto(Guid Id, byte[] Image, string Caption, int LikeCount, DateTimeOffset CreatedDate);
+    #region Properties
+    public record ItemDto(Guid Id,
+                        String UserName,
+                        byte[] Image,
+                        int LikeCount,
+                        string Caption,
+                        DateTimeOffset CreatedDate);
+    public record CreateItemDto(Guid UserId,
+                                byte[] Image,
+                                string Caption);
+    public record DeleteItetmDto(Guid ImageId);
+    #endregion
 
-    public record CreateItemDto([Required] byte[] Image, string Caption);
-
-    public record UpdateItemDto(string Caption,[Range(0,1000)] int LikeCount);
 } 

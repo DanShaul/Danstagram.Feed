@@ -3,10 +3,14 @@ using Danstagram.Common;
 
 namespace Danstagram.Feed.Service.Entities{
     public class InventoryItem : IEntity{
-        public Guid Id{get;set;}
-        public byte[] Image{get;set;}
-        public string Caption{get;set;}
-        public int LikeCount{get;set;}
-        public DateTimeOffset CreateDate{get;set;}
+        #region Properties
+        
+        public Guid Id {get;set;}
+
+        public Guid UserId {get;set;}
+
+        public Guid ItemId{get;set;}
+
+        #endregion
     }
 }
