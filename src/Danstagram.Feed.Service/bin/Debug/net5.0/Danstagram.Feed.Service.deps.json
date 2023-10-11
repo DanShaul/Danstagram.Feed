@@ -35,7 +35,7 @@
         "dependencies": {
           "Danstagram.Common": "1.0.2",
           "Danstagram.Feed.Contracts": "1.0.0",
-          "Danstagram.Inventory.Contracts": "1.0.1",
+          "Danstagram.Identities.Contracts": "1.0.0",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -355,15 +355,15 @@
           "lib/net5.0/Danstagram.Common.dll": {}
         }
       },
-      "Danstagram.Inventory.Contracts/1.0.1": {
+      "Danstagram.Identities.Contracts/1.0.0": {
         "runtime": {
-          "lib/net5.0/Danstagram.Inventory.Contracts.dll": {
+          "lib/net5.0/Danstagram.Identities.Contracts.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
         },
         "compile": {
-          "lib/net5.0/Danstagram.Inventory.Contracts.dll": {}
+          "lib/net5.0/Danstagram.Identities.Contracts.dll": {}
         }
       },
       "DnsClient/1.6.1": {
@@ -2538,12 +2538,12 @@
       "path": "danstagram.common/1.0.2",
       "hashPath": "danstagram.common.1.0.2.nupkg.sha512"
     },
-    "Danstagram.Inventory.Contracts/1.0.1": {
+    "Danstagram.Identities.Contracts/1.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QF+HQS7Bfb4aCG7mGMbPlWeDFcBM3wDzFbCbUBPxhZIjrVr7SJHUVLzjgVCOBM2yRHIytxxC65la7TPimY/jvg==",
-      "path": "danstagram.inventory.contracts/1.0.1",
-      "hashPath": "danstagram.inventory.contracts.1.0.1.nupkg.sha512"
+      "sha512": "sha512-OzpJ+7bS2hAPyuwnkzPXbirOpvsEMSudlhFzhca29MTnmUCBVOfZKah9Gw/5kVUSvaGRssnLVafP93nh9YbHcg==",
+      "path": "danstagram.identities.contracts/1.0.0",
+      "hashPath": "danstagram.identities.contracts.1.0.0.nupkg.sha512"
     },
     "DnsClient/1.6.1": {
       "type": "package",

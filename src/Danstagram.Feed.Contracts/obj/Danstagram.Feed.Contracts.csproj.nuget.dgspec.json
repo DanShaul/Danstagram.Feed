@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\Necessary\\Open Uni Matalot\\Sadna Be Tihnut monhe atzamim\\Danstagram\\Danstagram.Feed\\src\\Danstagram.Feed.Contracts\\Danstagram.Feed.Contracts.csproj": {
-      "version": "1.0.1",
+      "version": "1.0.0",
       "restore": {
         "projectUniqueName": "D:\\Necessary\\Open Uni Matalot\\Sadna Be Tihnut monhe atzamim\\Danstagram\\Danstagram.Feed\\src\\Danstagram.Feed.Contracts\\Danstagram.Feed.Contracts.csproj",
         "projectName": "Danstagram.Feed.Contracts",
@@ -51,7 +51,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -60,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
