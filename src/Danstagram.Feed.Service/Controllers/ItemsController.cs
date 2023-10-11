@@ -69,33 +69,46 @@ namespace Danstagram.Feed.Service.Controllers
             return items;
         }
 
-        // // Get /items/{id}
-        // [HttpGet("{id}")]
-        // public async Task<ActionResult<FeedItemDto>> GetByIdAsync(Guid id)
-        // {
-        //     FeedItem item = await itemsRepository.GetAsync(id);
+        // Get /items/{id}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<FeedItemDto>> GetByIdAsync(Guid id)
+        {
+            FeedItem item = await feedItemsRepository.GetAsync(id);
+            if(item == null){
+                return (ActionResult<FeedItemDto>)NotFound();
+            }
+            var itemLikes = await likeItemsRepository.GetAllAsync(item => item.FeedItemId == id);
+            var itemUserIdentity = await identityItemsRepository.GetAsync(item.UserId);
+            FeedItemDto itemDto = new(
+                item.Id,
+                itemUserIdentity.UserName,
+                item.Image,
+                itemLikes.Count,
+                item.Caption,
+                item.CreatedDate);
 
-        //     return item == null ? (ActionResult<ItemDto>)NotFound() : (ActionResult<ItemDto>)item.AsDto();
-        // }
+            return (ActionResult<FeedItemDto>)itemDto;
+        }
 
         // Post /items
         [HttpPost]
-        public async Task<ActionResult<FeedItemDto>> PostAsync(CreateItemDto createItemDto)
+        public async Task<ActionResult<CreateFeedItemDto>> PostAsync(CreateFeedItemDto createItemDto)
         {
             FeedItem item = new()
             {
                 Id = Guid.NewGuid(),
+                UserId = createItemDto.UserId,
                 Image = createItemDto.Image,
                 Caption = createItemDto.Caption,
-                LikeCount = 0,
                 CreatedDate = DateTimeOffset.UtcNow
             };
-            await itemsRepository.CreateAsync(item);
 
-            await publishEndpoint.Publish(new FeedItemCreated(item.Id, item.Image, item.Caption, item.LikeCount));
+            await feedItemsRepository.CreateAsync(item);
 
-        //     return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
-        // }
+            // await publishEndpoint.Publish(new FeedItemCreated(item.Id, item.Image, item.Caption, item.LikeCount));
+
+            return CreatedAtAction(nameof(GetByIdAsync), new { id = item.Id }, item);
+        }
 
         // // PUT /items/{id}
         // [HttpPut("{id}")]
@@ -123,21 +136,22 @@ namespace Danstagram.Feed.Service.Controllers
         //     return NoContent();
         // }
 
-        // // DELETE /items/{id}
-        // [HttpDelete("{id}")]
-        // public async Task<IActionResult> DeleteAsync(Guid id)
-        // {
-        //     FeedItem item = await itemsRepository.GetAsync(id);
+        // DELETE /items/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(Guid id)
+        {
+            FeedItem item = await feedItemsRepository.GetAsync(id);
 
-        //     if (item == null)
-        //     {
-        //         return NotFound();
-        //     }
-        //     await itemsRepository.RemoveAsync(item.Id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            await feedItemsRepository.RemoveAsync(item.Id);
 
-        //     await publishEndpoint.Publish(new FeedItemDeleted(item.Id));
+            //await publishEndpoint.Publish(new FeedItemDeleted(item.Id));
 
-        //     return NoContent();
-        // }
+            return NoContent();
+        }
+        #endregion
     }
 }
