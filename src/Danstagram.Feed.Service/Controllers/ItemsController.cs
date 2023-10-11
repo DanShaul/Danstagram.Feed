@@ -7,12 +7,6 @@ using Danstagram.Feed.Service.Dtos;
 using Danstagram.Feed.Service.Entities;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
-using Danstagram.Feed.Contracts;
-using Microsoft.VisualBasic;
-using System.Collections.ObjectModel;
-using MassTransit.Internals;
-using Microsoft.AspNetCore.Http.Features;
-using System.Net.NetworkInformation;
 
 namespace Danstagram.Feed.Service.Controllers
 {
