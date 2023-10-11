@@ -36,6 +36,7 @@ dotnet add package Microsoft.Extensions.DependencyInjection
 dotnet add package Microsoft.Extensions.Http.Polly
 dotnet add package MassTransit.AspNetCore
 dotnet add package MassTransit.RabbitMQ
+dotnet dev-certs https --trust
 dotnet nuget add source 'D:\...' -n Danstagram
 
 ```
