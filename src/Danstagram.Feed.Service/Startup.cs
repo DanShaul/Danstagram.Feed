@@ -28,9 +28,10 @@ namespace Danstagram.Feed.Service
             Get<ServiceSettings>();
 
             services.AddMongo()
-                .AddMongoRepository<FeedItem>("items")
+                .AddMongoRepository<FeedItem>("feeditems")
+                .AddMongoRepository<LikeItem>("likeitems")
+                .AddMongoRepository<IdentityItem>("identityitems")
                 .AddMassTransitWithRabbitMQ();
-
 
             services.AddControllers(options =>
             {

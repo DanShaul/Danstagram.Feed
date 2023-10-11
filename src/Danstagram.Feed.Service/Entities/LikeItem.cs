@@ -1,8 +1,9 @@
 
 using System;
+using Danstagram.Common;
 
 namespace Danstagram.Feed.Service.Entities{
-    public class LikeItem
+    public class LikeItem : IEntity
     {
         #region Properties
         
