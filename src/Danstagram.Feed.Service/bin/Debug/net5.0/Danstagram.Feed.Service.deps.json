@@ -33,9 +33,10 @@
     ".NETCoreApp,Version=v5.0": {
       "Danstagram.Feed.Service/1.0.0": {
         "dependencies": {
-          "Danstagram.Common": "1.0.2",
+          "Danstagram.Common": "1.0.4",
           "Danstagram.Feed.Contracts": "1.0.0",
           "Danstagram.Identities.Contracts": "1.0.0",
+          "Danstagram.Interactions.Contracts": "1.0.1",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -336,7 +337,7 @@
           "lib/netcoreapp3.1/AWSSDK.SecurityToken.dll": {}
         }
       },
-      "Danstagram.Common/1.0.2": {
+      "Danstagram.Common/1.0.4": {
         "dependencies": {
           "MassTransit.AspNetCore": "7.3.1",
           "MassTransit.RabbitMQ": "8.1.1",
@@ -364,6 +365,17 @@
         },
         "compile": {
           "lib/net5.0/Danstagram.Identities.Contracts.dll": {}
+        }
+      },
+      "Danstagram.Interactions.Contracts/1.0.1": {
+        "runtime": {
+          "lib/net5.0/Danstagram.Interactions.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Danstagram.Interactions.Contracts.dll": {}
         }
       },
       "DnsClient/1.6.1": {
@@ -2531,12 +2543,12 @@
       "path": "awssdk.securitytoken/3.7.100.14",
       "hashPath": "awssdk.securitytoken.3.7.100.14.nupkg.sha512"
     },
-    "Danstagram.Common/1.0.2": {
+    "Danstagram.Common/1.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-R7TPM/PdXKWMqNSXi0FmvPqoCqABzkVozC6OREzqiYhmSmJE/tCPqSrTFg0CqT6V/gZ6i59H4gMQFSRB5kImaw==",
-      "path": "danstagram.common/1.0.2",
-      "hashPath": "danstagram.common.1.0.2.nupkg.sha512"
+      "sha512": "sha512-QndrRqj/yXXwruGBOsZljyclZbCm6rBnOCgVTYb2uJYeNtOEWnjN0Q+jgu/VbWzxBrZIzBQEh4B7V/jkNFKfUw==",
+      "path": "danstagram.common/1.0.4",
+      "hashPath": "danstagram.common.1.0.4.nupkg.sha512"
     },
     "Danstagram.Identities.Contracts/1.0.0": {
       "type": "package",
@@ -2544,6 +2556,13 @@
       "sha512": "sha512-OzpJ+7bS2hAPyuwnkzPXbirOpvsEMSudlhFzhca29MTnmUCBVOfZKah9Gw/5kVUSvaGRssnLVafP93nh9YbHcg==",
       "path": "danstagram.identities.contracts/1.0.0",
       "hashPath": "danstagram.identities.contracts.1.0.0.nupkg.sha512"
+    },
+    "Danstagram.Interactions.Contracts/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cFfadzibL5qWpuDbIsI4sN7Dr5KOrVYF5AFsL8wg8Q2dw5oxdCfkilaV79QBdiQlrZDpB1aL9B8bUhDNIv478A==",
+      "path": "danstagram.interactions.contracts/1.0.1",
+      "hashPath": "danstagram.interactions.contracts.1.0.1.nupkg.sha512"
     },
     "DnsClient/1.6.1": {
       "type": "package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JcRVf6BEhGV2wObqf0I1AX9WPeb2u7SzYVXepTYhGxWrfKmwUqfjiAFWbBwUtI1UHmYsQJU/1/NYYyFpYgV4tA==",
+  "dgSpecHash": "uaaHdYephd86XOciIjXOKzKsDEuezUuSeYaKXwr7MYxpkVsORvkhKcAFweROUfEOtSUNjzAbVyF5DcEj9bLWEQ==",
   "success": true,
   "projectFilePath": "D:\\Necessary\\Open Uni Matalot\\Sadna Be Tihnut monhe atzamim\\Danstagram\\Danstagram.Feed\\src\\Danstagram.Feed.Service\\Danstagram.Feed.Service.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\dansh\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\dansh\\.nuget\\packages\\danstagram.common\\1.0.4\\danstagram.common.1.0.4.nupkg.sha512",
     "C:\\Users\\dansh\\.nuget\\packages\\danstagram.identities.contracts\\1.0.0\\danstagram.identities.contracts.1.0.0.nupkg.sha512",
+    "C:\\Users\\dansh\\.nuget\\packages\\danstagram.interactions.contracts\\1.0.1\\danstagram.interactions.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\dansh\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\dansh\\.nuget\\packages\\masstransit\\8.1.1\\masstransit.8.1.1.nupkg.sha512",
     "C:\\Users\\dansh\\.nuget\\packages\\masstransit.abstractions\\8.1.1\\masstransit.abstractions.8.1.1.nupkg.sha512",
