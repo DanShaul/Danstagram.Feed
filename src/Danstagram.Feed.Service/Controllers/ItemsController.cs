@@ -38,6 +38,12 @@ namespace Danstagram.Feed.Service.Controllers
         }
 
         #endregion
+        [Route("~/health")]
+        [HttpGet]
+        public ActionResult GetHealth()
+        {
+            return Ok();
+        }
 
         #region Methods
         [HttpGet]
