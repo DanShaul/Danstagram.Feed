@@ -40,16 +40,9 @@ namespace Danstagram.Feed.Service.Controllers
         #endregion
 
         #region Methods
-        [Route("~/health")]
-        [HttpGet]
-        public ActionResult GetHealth()
-        {
-            return Ok();
-        }
         [HttpGet]
         public async Task<IEnumerable<FeedItemDto>> GetItemsAsync()
         {
-
             IReadOnlyCollection<FeedItem> feedItems = await feedItemsRepository.GetAllAsync();
 
             IEnumerable<Guid> feedItemIds = feedItems.Select(item => item.Id);
