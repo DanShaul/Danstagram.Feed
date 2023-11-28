@@ -1,11 +1,10 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 
-namespace Danstagram.Feed.Service.Dtos
+namespace Danstagram.Feed.Service
 {
     #region Properties
     public record FeedItemDto(Guid Id,
-                        String UserName,
+                        string UserName,
                         byte[] Image,
                         int LikeCount,
                         string Caption,
@@ -13,7 +12,7 @@ namespace Danstagram.Feed.Service.Dtos
     public record CreateFeedItemDto(Guid UserId,
                                 byte[] Image,
                                 string Caption);
-    public record DeleteFeedItetmDto(Guid ImageId);
+    public record DeleteFeedItemDto(Guid ImageId);
     #endregion
 
-} 
+}

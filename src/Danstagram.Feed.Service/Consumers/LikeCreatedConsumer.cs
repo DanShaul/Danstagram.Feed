@@ -24,7 +24,7 @@ namespace Danstagram.Feed.Service.Consumers
     public async Task Consume(ConsumeContext<LikeCreated> context)
     {
       var message = context.Message;
-      if (await this.repository.GetAsync(message.Id) != null)
+      if (await repository.GetAsync(message.Id) != null)
         return;
 
       LikeItem likeItem = new()

@@ -4,8 +4,9 @@ using Danstagram.Feed.Service.Entities;
 using Danstagram.Identities.Contracts;
 using MassTransit;
 
-namespace Danstagram.Feed.Service.Consumers{
-    public class IdentityCreatedConsumer : RepositoryConsumer<IdentityItem>,IConsumer<IdentityCreated>
+namespace Danstagram.Feed.Service.Consumers
+{
+    public class IdentityCreatedConsumer : RepositoryConsumer<IdentityItem>, IConsumer<IdentityCreated>
     {
         #region Constructors
         public IdentityCreatedConsumer(IRepository<IdentityItem> repository) : base(repository)
@@ -17,12 +18,15 @@ namespace Danstagram.Feed.Service.Consumers{
         #region Methods
         public async Task Consume(ConsumeContext<IdentityCreated> context)
         {
-            var message = context.Message;
-            if ((await repository.GetAsync(message.Id)) != null) return;
+            IdentityCreated message = context.Message;
+            if ((await repository.GetAsync(message.Id)) != null)
+            {
+                return;
+            }
 
-            IdentityItem identity = new() {Id = message.Id,UserName = message.UserName};
+            IdentityItem identity = new() { Id = message.Id, UserName = message.UserName };
 
-            await this.repository.CreateAsync(identity);
+            await repository.CreateAsync(identity);
         }
         #endregion
     }
